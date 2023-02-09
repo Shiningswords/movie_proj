@@ -4,4 +4,9 @@
 
 {% block content %}
  <h2>Список всех фильмов</h2>
+ <ul>
+  {% for movie in movies %}
+    <li>{{movie.name}}, рейтинг - {{movie.rating}}, год выхода - {{movie.year| default:"Неизвестен"}}</li>
+  {% endfor %}
+ </ul>
 {% endblock %}
