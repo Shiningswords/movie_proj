@@ -3,7 +3,7 @@ from .models import Movie
 
 
 def show_all_movie(request):
-    movies = Movie.objects.all()
+    movies = Movie.objects.order_by('name')
     return render(request, 'movie_app/all_movies.html', context={'movies': movies})
 
 
