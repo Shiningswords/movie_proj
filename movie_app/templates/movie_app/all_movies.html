@@ -9,4 +9,8 @@
     <li><a href="{{movie.get_url}}">{{movie.name}}</a>, рейтинг - {{movie.rating}}, год выхода - {{movie.year| default:"Не указан"}}</li>
   {% endfor %}
  </ul>
+<h2>Количество фильмов {{agg.id__count}}</h2>
+<h2>Средний бюджет {{agg.budget__avg}}</h2>
+<h2>Максимальный рейтинг {{agg.rating__max}}</h2>
+<h2>Минимальный рейтинг {{agg.rating__min}}</h2>
 {% endblock %}
