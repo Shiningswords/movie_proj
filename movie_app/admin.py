@@ -4,7 +4,17 @@ from .models import Movie
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ['name', 'rating', 'year']
+    list_display = ['name', 'rating', 'year', 'rating_status']
     list_editable = ['rating', 'year']
     ordering = ['rating']
     list_per_page = 4
+
+    @admin.display(ordering='rating', description='Статус')
+    def rating_status(self, mov):
+        if mov.rating < 50:
+            return 'Зачем это смотреть?'
+        elif mov.rating < 70:
+            return 'Разок можно глянуть'
+        elif mov.rating < 85:
+            return 'Отлично'
+        return 'ТОП!'
