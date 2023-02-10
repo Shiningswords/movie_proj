@@ -6,6 +6,7 @@ from .models import Movie
 def show_all_movie(request):
     movies = Movie.objects.order_by('name')
     agg = movies.aggregate(Avg('budget'), Min('rating'), Max('rating'), Count('id'))
+    agg['budget__avg'] = round(agg['budget__avg'])
     return render(request, 'movie_app/all_movies.html', context={'movies': movies,
                                                                  'agg': agg})
 
