@@ -7,3 +7,4 @@ class MovieAdmin(admin.ModelAdmin):
     list_display = ['name', 'rating', 'year']
     list_editable = ['rating', 'year']
     ordering = ['rating']
+    list_per_page = 4
