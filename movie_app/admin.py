@@ -6,3 +6,4 @@ from .models import Movie
 class MovieAdmin(admin.ModelAdmin):
     list_display = ['name', 'rating', 'year']
     list_editable = ['rating', 'year']
+    ordering = ['rating']
