@@ -10,6 +10,7 @@ class MovieAdmin(admin.ModelAdmin):
     ordering = ['rating']
     list_per_page = 4
     actions = ['set_dollars', 'set_euro']
+    search_fields = ['name']
 
     @admin.display(ordering='rating', description='Статус')
     def rating_status(self, mov):
