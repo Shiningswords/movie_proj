@@ -5,3 +5,4 @@ from .models import Movie
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     list_display = ['name', 'rating', 'year']
+    list_editable = ['rating', 'year']
