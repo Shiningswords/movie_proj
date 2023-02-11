@@ -32,8 +32,8 @@ class RatingFilter(admin.SimpleListFilter):
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     exclude = ['slug']
-    list_display = ['name', 'rating', 'year', 'currency', 'rating_status']
-    list_editable = ['rating', 'year', 'currency']
+    list_display = ['name', 'rating', 'year', 'director', 'currency', 'rating_status']
+    list_editable = ['rating', 'year', 'director', 'currency']
     ordering = ['rating']
     list_per_page = 4
     actions = ['set_dollars', 'set_euro']
