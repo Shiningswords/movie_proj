@@ -35,6 +35,7 @@ class MovieAdmin(admin.ModelAdmin):
     exclude = ['slug']
     list_display = ['name', 'rating', 'year', 'director', 'currency', 'rating_status']
     list_editable = ['rating', 'year', 'director', 'currency']
+    filter_horizontal = ['actors']
     ordering = ['rating']
     list_per_page = 4
     actions = ['set_dollars', 'set_euro']
